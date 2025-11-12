@@ -11,14 +11,14 @@ export function ContactSection() {
   const contactInfo = [
     {
       icon: Mail,
-      label: 'Email',
+      label: '邮箱',
       value: 'contact@mywebsite.com',
       href: 'mailto:contact@mywebsite.com'
     },
     {
       icon: MapPin,
-      label: 'Location',
-      value: 'My City, Country',
+      label: '位置',
+      value: '我的城市，中国',
       href: '#'
     }
   ]
@@ -27,7 +27,7 @@ export function ContactSection() {
     { icon: Github, href: '#', label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#', label: 'Email' }
+    { icon: Mail, href: '#', label: '邮箱' }
   ]
 
   return (
@@ -40,11 +40,11 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">Get In Touch</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">联系我</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            I'm always interested in new opportunities and interesting projects. 
-            Let's discuss how we can work together!
+            我始终对新的机会和有趣的项目感兴趣。
+            让我们讨论如何合作！
           </p>
         </motion.div>
 
@@ -57,53 +57,53 @@ export function ContactSection() {
             viewport={{ once: true }}
           >
             <Card className="p-8 bg-gray-900/50 border-white/10">
-              <h3 className="text-2xl text-white mb-6">Send me a message</h3>
+              <h3 className="text-2xl text-white mb-6">给我发送消息</h3>
               <form className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-gray-300 text-sm mb-2 block">First Name</label>
+                    <label className="text-gray-300 text-sm mb-2 block">名字</label>
                     <Input
-                      placeholder="Your first name"
+                      placeholder="您的名字"
                       className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-emerald-500"
                     />
                   </div>
                   <div>
-                    <label className="text-gray-300 text-sm mb-2 block">Last Name</label>
+                    <label className="text-gray-300 text-sm mb-2 block">姓氏</label>
                     <Input
-                      placeholder="Your last name"
+                      placeholder="您的姓氏"
                       className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-emerald-500"
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="text-gray-300 text-sm mb-2 block">Email</label>
+                  <label className="text-gray-300 text-sm mb-2 block">邮箱</label>
                   <Input
                     type="email"
-                    placeholder="your.email@example.com"
+                    placeholder="您的邮箱@example.com"
                     className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-emerald-500"
                   />
                 </div>
                 
                 <div>
-                  <label className="text-gray-300 text-sm mb-2 block">Subject</label>
+                  <label className="text-gray-300 text-sm mb-2 block">主题</label>
                   <Input
-                    placeholder="Project discussion"
+                    placeholder="项目讨论"
                     className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-emerald-500"
                   />
                 </div>
                 
                 <div>
-                  <label className="text-gray-300 text-sm mb-2 block">Message</label>
+                  <label className="text-gray-300 text-sm mb-2 block">消息</label>
                   <Textarea
-                    placeholder="Tell me about your project..."
+                    placeholder="告诉我关于您的项目..."
                     rows={5}
                     className="bg-black/50 border-white/20 text-white placeholder:text-gray-500 focus:border-emerald-500 resize-none"
                   />
                 </div>
                 
                 <Button className="w-full bg-emerald-500 hover:bg-emerald-600 text-white py-3">
-                  Send Message
+                  发送消息
                 </Button>
               </form>
             </Card>
@@ -118,11 +118,11 @@ export function ContactSection() {
             className="space-y-8"
           >
             <div>
-              <h3 className="text-2xl text-white mb-6">Let's connect</h3>
+              <h3 className="text-2xl text-white mb-6">让我们联系</h3>
               <p className="text-gray-400 leading-relaxed mb-8">
-                I'm currently available for freelance work and full-time opportunities. 
-                Whether you have a project in mind or just want to chat about technology, 
-                I'd love to hear from you.
+                我目前接受自由职业项目和全职工作机会。
+                无论您有项目合作意向，还是想聊一聊技术，
+                我都很乐意听取您的想法。
               </p>
             </div>
 
@@ -149,7 +149,7 @@ export function ContactSection() {
             </div>
 
             <div className="pt-8">
-              <h4 className="text-white text-lg mb-4">Follow me</h4>
+              <h4 className="text-white text-lg mb-4">关注我</h4>
               <div className="flex space-x-4">
                 {socialLinks.map((social, index) => (
                   <motion.a
@@ -180,7 +180,7 @@ export function ContactSection() {
           className="border-t border-white/10 mt-16 pt-8 text-center"
         >
           <p className="text-gray-400">
-            © {new Date().getFullYear()} Portfolio. Designed &amp; Built with ❤️ using React and Tailwind CSS.
+            © {new Date().getFullYear()} 作品集。使用React和Tailwind CSS用心设计和开发。
           </p>
         </motion.div>
       </div>

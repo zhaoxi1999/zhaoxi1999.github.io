@@ -51,7 +51,7 @@ export function HeroSection() {
             transition={{ delay: 0.2 }}
             className="text-emerald-400 text-lg tracking-wider"
           >
-            Hello, I'm
+            你好，我是
           </motion.p>
           
           <motion.h1
@@ -60,7 +60,7 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl text-white mb-6"
           >
-            Peter
+            彼得
           </motion.h1>
           
           <motion.div
@@ -69,13 +69,13 @@ export function HeroSection() {
             transition={{ delay: 0.6 }}
             className="text-2xl md:text-4xl text-gray-300 mb-8"
           >
-            I'm a{' '}
+            我是一名{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
-              Full-Stack Developer
+              全栈开发者
             </span>
-            {' '}specializing in{' '}
+            {' '}专注于{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
-              Modern Web Applications
+              现代Web应用程序
             </span>
           </motion.div>
           
@@ -85,8 +85,8 @@ export function HeroSection() {
             transition={{ delay: 0.8 }}
             className="text-gray-400 text-lg max-w-2xl mx-auto mb-8"
           >
-            I craft exceptional digital experiences using cutting-edge technologies like React, Node.js, and TypeScript. 
-            Passionate about clean code, user experience, and bringing ideas to life.
+            我使用React、Node.js和TypeScript等前沿技术打造卓越的数字体验。
+            热衷于编写干净的代码，关注用户体验，并将创意变为现实。
           </motion.p>
           
           <motion.div
@@ -99,7 +99,7 @@ export function HeroSection() {
               onClick={scrollToProjects}
               className="bg-emerald-500 hover:bg-emerald-600 text-white px-8 py-3 rounded-lg transition-all duration-300 transform hover:scale-105"
             >
-              View My Work
+              查看我的作品
             </Button>
             
             <div className="flex items-center space-x-4">

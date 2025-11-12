@@ -37,20 +37,26 @@ export function Navigation() {
             transition={{ delay: 0.2 }}
             className="text-white text-xl font-medium"
           >
-            &lt;DevPortfolio /&gt;
+            &lt;开发者作品集 /&gt;
           </motion.div>
           
           <div className="hidden md:flex items-center space-x-8">
-            {['home', 'about', 'skills', 'projects', 'contact'].map((item, index) => (
+            {[
+              { id: 'home', text: '首页' },
+              { id: 'about', text: '关于' },
+              { id: 'skills', text: '技能' },
+              { id: 'projects', text: '项目' },
+              { id: 'contact', text: '联系' }
+            ].map((item, index) => (
               <motion.button
-                key={item}
+                key={item.id}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * index }}
-                onClick={() => scrollToSection(item)}
-                className="text-gray-300 hover:text-white transition-colors duration-200 capitalize"
+                onClick={() => scrollToSection(item.id)}
+                className="text-gray-300 hover:text-white transition-colors duration-200"
               >
-                {item}
+                {item.text}
               </motion.button>
             ))}
           </div>

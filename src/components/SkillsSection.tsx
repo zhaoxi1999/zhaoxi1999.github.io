@@ -6,7 +6,7 @@ import { Card } from './ui/card'
 export function SkillsSection() {
   const skillCategories = [
     {
-      title: 'Frontend',
+      title: '前端开发',
       skills: [
         { name: 'React/Next.js', level: 95, color: 'from-blue-400 to-blue-600' },
         { name: 'TypeScript', level: 90, color: 'from-blue-500 to-blue-700' },
@@ -15,7 +15,7 @@ export function SkillsSection() {
       ]
     },
     {
-      title: 'Backend',
+      title: '后端开发',
       skills: [
         { name: 'Node.js', level: 90, color: 'from-green-500 to-green-700' },
         { name: 'Python', level: 85, color: 'from-yellow-400 to-yellow-600' },
@@ -24,7 +24,7 @@ export function SkillsSection() {
       ]
     },
     {
-      title: 'Tools & Others',
+      title: '工具与其他',
       skills: [
         { name: 'Git/GitHub', level: 92, color: 'from-gray-400 to-gray-600' },
         { name: 'Docker', level: 82, color: 'from-blue-600 to-blue-800' },
@@ -44,10 +44,10 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">Skills & Technologies</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">技能与技术</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Here are the technologies and tools I use to bring ideas to life
+            以下是我用来将想法变为现实的技术和工具
           </p>
         </motion.div>
         
@@ -110,7 +110,7 @@ export function SkillsSection() {
           viewport={{ once: true }}
           className="mt-16 text-center"
         >
-          <h3 className="text-2xl text-white mb-8">Technologies I Work With</h3>
+          <h3 className="text-2xl text-white mb-8">我使用的技术</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 opacity-60">
             {[
               'React', 'TypeScript', 'Node.js', 'Next.js', 'Python', 'PostgreSQL', 

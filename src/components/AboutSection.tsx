@@ -8,23 +8,23 @@ export function AboutSection() {
   const features = [
     {
       icon: Code,
-      title: 'Clean Code',
-      description: 'Writing maintainable, scalable, and efficient code that stands the test of time.'
+      title: '代码整洁',
+      description: '编写可维护、可扩展且高效的代码，经得起时间的考验。'
     },
     {
       icon: Lightbulb,
-      title: 'Innovation',
-      description: 'Always exploring new technologies and creative solutions to complex problems.'
+      title: '创新精神',
+      description: '不断探索新技术和创新解决方案，应对复杂问题。'
     },
     {
       icon: Users,
-      title: 'Collaboration',
-      description: 'Working effectively with teams to deliver exceptional user experiences.'
+      title: '团队协作',
+      description: '与团队高效合作，打造卓越的用户体验。'
     },
     {
       icon: Coffee,
-      title: 'Dedication',
-      description: 'Committed to continuous learning and staying current with industry trends.'
+      title: '专注投入',
+      description: '致力于持续学习，紧跟行业发展趋势。'
     }
   ]
 
@@ -38,7 +38,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">About Me</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">关于我</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 mx-auto"></div>
         </motion.div>
         
@@ -51,19 +51,13 @@ export function AboutSection() {
             className="space-y-6"
           >
             <h3 className="text-2xl text-white mb-4">
-              Passionate about creating digital experiences that matter
+              热衷于创造有意义的数字体验
             </h3>
             <p className="text-gray-300 leading-relaxed">
-              With over 5 years of experience in web development, I've had the privilege of working with 
-              startups and established companies to bring their digital visions to life. My journey began 
-              with a curiosity about how websites work, and it has evolved into a passion for creating 
-              seamless, performant applications.
+              拥有超过5年的Web开发经验，我有幸与初创公司和知名企业合作，将他们的数字愿景变为现实。我的旅程始于对网站工作原理的好奇，并逐渐演变为对创建流畅、高性能应用程序的热情。
             </p>
             <p className="text-gray-300 leading-relaxed">
-              I specialize in React, Node.js, and modern JavaScript frameworks, but I'm always eager to 
-              learn new technologies that can help me build better solutions. When I'm not coding, you'll 
-              find me contributing to open-source projects, writing technical articles, or exploring the 
-              latest in web technologies.
+              我专注于React、Node.js和现代JavaScript框架，但我始终渴望学习新技术，帮助我构建更好的解决方案。当我不编程时，你会发现我在为开源项目做贡献、撰写技术文章或探索Web技术的最新发展。
             </p>
             
             <motion.div
@@ -73,7 +67,7 @@ export function AboutSection() {
               viewport={{ once: true }}
               className="flex flex-wrap gap-3 mt-6"
             >
-              {['Problem Solver', 'Team Player', 'Quick Learner', 'Detail Oriented'].map((trait, index) => (
+              {['问题解决者', '团队合作者', '快速学习者', '注重细节'].map((trait, index) => (
                 <span
                   key={trait}
                   className="px-4 py-2 bg-emerald-500/20 text-emerald-400 rounded-full text-sm border border-emerald-500/30"

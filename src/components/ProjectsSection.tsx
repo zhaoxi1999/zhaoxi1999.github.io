@@ -9,8 +9,8 @@ import { ImageWithFallback } from './figma/ImageWithFallback'
 export function ProjectsSection() {
   const projects = [
     {
-      title: 'E-Commerce Platform',
-      description: 'A full-stack e-commerce solution built with Next.js, TypeScript, and Stripe integration. Features include user authentication, product management, and real-time inventory tracking.',
+      title: '电子商务平台',
+      description: '使用Next.js、TypeScript和Stripe集成构建的全栈电子商务解决方案。功能包括用户认证、产品管理和实时库存跟踪。',
       image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop',
       technologies: ['Next.js', 'TypeScript', 'Stripe', 'PostgreSQL'],
       github: 'https://github.com',
@@ -18,8 +18,8 @@ export function ProjectsSection() {
       featured: true
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative project management tool with real-time updates, drag-and-drop functionality, and team collaboration features.',
+      title: '任务管理应用',
+      description: '具有实时更新、拖放功能和团队协作特性的协作项目管理工具。',
       image: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=600&h=400&fit=crop',
       technologies: ['React', 'Node.js', 'Socket.io', 'MongoDB'],
       github: 'https://github.com',
@@ -27,8 +27,8 @@ export function ProjectsSection() {
       featured: true
     },
     {
-      title: 'Weather Dashboard',
-      description: 'A responsive weather application with location-based forecasts, interactive maps, and data visualization using Chart.js.',
+      title: '天气预报仪表盘',
+      description: '具有基于位置的天气预报、交互式地图和使用Chart.js进行数据可视化的响应式天气应用程序。',
       image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=600&h=400&fit=crop',
       technologies: ['Vue.js', 'Chart.js', 'OpenWeather API', 'Tailwind'],
       github: 'https://github.com',
@@ -36,8 +36,8 @@ export function ProjectsSection() {
       featured: false
     },
     {
-      title: 'Social Media Analytics',
-      description: 'A dashboard for social media analytics with real-time data processing, custom visualizations, and automated reporting.',
+      title: '社交媒体分析',
+      description: '用于社交媒体分析的仪表盘，具有实时数据处理、自定义可视化和自动报告功能。',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
       technologies: ['Python', 'Django', 'React', 'D3.js'],
       github: 'https://github.com',
@@ -45,8 +45,8 @@ export function ProjectsSection() {
       featured: false
     },
     {
-      title: 'AI Chat Interface',
-      description: 'An intelligent chat interface with natural language processing, context awareness, and multi-language support.',
+      title: 'AI聊天界面',
+      description: '具有自然语言处理、上下文感知和多语言支持的智能聊天界面。',
       image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=600&h=400&fit=crop',
       technologies: ['React', 'OpenAI API', 'Node.js', 'WebSocket'],
       github: 'https://github.com',
@@ -54,8 +54,8 @@ export function ProjectsSection() {
       featured: false
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website with smooth animations, dark theme, and optimized performance built with modern web technologies.',
+      title: '作品集网站',
+      description: '使用现代Web技术构建的响应式作品集网站，具有流畅的动画、深色主题和优化的性能。',
       image: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop',
       technologies: ['Next.js', 'Framer Motion', 'Tailwind', 'TypeScript'],
       github: 'https://github.com',
@@ -77,10 +77,10 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">Featured Projects</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">精选项目</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
-            Here are some of my recent projects that showcase my skills and passion for web development
+            以下是我最近的一些项目，展示了我在Web开发方面的技能和热情
           </p>
         </motion.div>
 
@@ -157,7 +157,7 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="mb-8"
         >
-          <h3 className="text-2xl text-white text-center mb-8">Other Projects</h3>
+          <h3 className="text-2xl text-white text-center mb-8">其他项目</h3>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -225,10 +225,10 @@ export function ProjectsSection() {
         >
           <Button 
             variant="outline" 
-            className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 px-8 py-3"
-          >
-            View All Projects
-          </Button>
+              className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 px-8 py-3"
+            >
+              查看所有项目
+            </Button>
         </motion.div>
       </div>
     </section>
