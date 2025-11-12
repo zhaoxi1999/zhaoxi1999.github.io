@@ -68,7 +68,7 @@ export function ProjectsSection() {
   const otherProjects = projects.filter(p => !p.featured)
 
   return (
-    <section id="projects" className="py-20 bg-gray-900">
+    <section id="projects-section" className="py-20 bg-gray-900">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -77,7 +77,7 @@ export function ProjectsSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">精选项目</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">项目经历</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-400 to-blue-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
             以下是我最近的一些项目，展示了我在Web开发方面的技能和热情

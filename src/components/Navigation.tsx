@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 
 export function Navigation() {
@@ -14,12 +14,23 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const [isOpen, setIsOpen] = useState(false)
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
+  const navItems = [
+    { id: 'home', text: '首页' },
+    { id: 'about', text: '关于我' },
+    { id: 'education', text: '教育经历' },
+    { id: 'experience', text: '工作经历' },
+    { id: 'projects-section', text: '项目经历' },
+    { id: 'contact-section', text: '联系方式' }
+  ]
 
   return (
     <motion.nav
@@ -40,14 +51,9 @@ export function Navigation() {
             &lt;开发者作品集 /&gt;
           </motion.div>
           
+          {/* 桌面端导航 */}
           <div className="hidden md:flex items-center space-x-8">
-            {[
-              { id: 'home', text: '首页' },
-              { id: 'about', text: '关于' },
-              { id: 'skills', text: '技能' },
-              { id: 'projects', text: '项目' },
-              { id: 'contact', text: '联系' }
-            ].map((item, index) => (
+            {navItems.map((item, index) => (
               <motion.button
                 key={item.id}
                 initial={{ opacity: 0, y: -20 }}
@@ -60,8 +66,54 @@ export function Navigation() {
               </motion.button>
             ))}
           </div>
+          
+          {/* 移动端菜单按钮 */}
+          <div className="md:hidden">
+            <motion.button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-white p-2"
+              whileTap={{ scale: 0.95 }}
+            >
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
+              </svg>
+            </motion.button>
+          </div>
         </div>
       </div>
+      
+      {/* 移动端导航菜单 */}
+      {isOpen && (
+        <motion.div
+          className="fixed inset-0 bg-black/95 z-40 md:hidden flex items-center justify-center"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex flex-col space-y-6">
+            {navItems.map((item, index) => (
+              <motion.button
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 * index }}
+                onClick={() => {
+                  scrollToSection(item.id)
+                  setIsOpen(false)
+                }}
+                className="text-gray-300 hover:text-white text-xl font-medium transition-colors duration-200 px-6 py-3"
+              >
+                {item.text}
+              </motion.button>
+            ))}
+          </div>
+        </motion.div>
+      )}
     </motion.nav>
   )
 }

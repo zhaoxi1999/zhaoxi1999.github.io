@@ -31,7 +31,7 @@ export function ContactSection() {
   ]
 
   return (
-    <section id="contact" className="py-20 bg-black">
+    <section id="contact-section" className="py-20 bg-black">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -40,7 +40,7 @@ export function ContactSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl text-white mb-6">联系我</h2>
+          <h2 className="text-4xl md:text-5xl text-white mb-6">联系方式</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-purple-400 to-pink-400 mx-auto"></div>
           <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
             我始终对新的机会和有趣的项目感兴趣。

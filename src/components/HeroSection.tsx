@@ -6,7 +6,7 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
 
 export function HeroSection() {
   const scrollToProjects = () => {
-    const element = document.getElementById('projects')
+    const element = document.getElementById('projects-section')
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' })
     }
