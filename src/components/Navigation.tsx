@@ -48,7 +48,7 @@ export function Navigation() {
             transition={{ delay: 0.2 }}
             className="text-white text-xl font-medium"
           >
-            &lt;开发者作品集 /&gt;
+            赵熙
           </motion.div>
           
           {/* 桌面端导航 */}

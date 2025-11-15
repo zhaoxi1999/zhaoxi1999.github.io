@@ -16,11 +16,13 @@ export function EducationSection() {
 
   const educationItems = data.education.map((e, idx) => ({
     id: idx + 1,
-    degree: `${e.major} ${e.degree}`,
+    major: e.major,
+    degree: e.degree,
     institution: e.institution,
     school: e.school,
     year: formatRange(e.start, e.end),
-    description: `相关课程：${e.courses.join('，')}` + (e.awards.length ? `。获奖：${e.awards.join('，')}` : '')
+    courses: e.courses,
+    awards: e.awards
   }))
 
   const containerVariants = {
@@ -28,7 +30,7 @@ export function EducationSection() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.15
       }
     }
   }
@@ -39,7 +41,7 @@ export function EducationSection() {
       opacity: 1,
       y: 0,
       transition: {
-        duration: 0.5
+        duration: 0.6
       }
     }
   }
@@ -63,7 +65,7 @@ export function EducationSection() {
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-1 gap-8 max-w-4xl mx-auto">
+        <div className="space-y-6 max-w-3xl mx-auto">
           {educationItems.map((item, index) => (
             <motion.div
               key={item.id}
@@ -71,19 +73,48 @@ export function EducationSection() {
               whileInView="visible"
               viewport={{ once: true, margin: "-100px" }}
               variants={itemVariants}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8 hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300"
+              className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/30 rounded-xl p-6 md:p-8 hover:shadow-lg hover:shadow-purple-900/10 transition-all duration-300 hover:border-purple-700/30"
             >
-              <div className="flex flex-row justify-between items-start gap-4 mb-4">
-                <div className="flex-1">
-                  <h3 className="text-3xl md:text-4xl font-bold text-emerald-400">{item.institution}</h3>
-                  <p className="text-xl text-white mt-2">{item.degree}</p>
-                  {item.school && (
-                    <p className="text-sm text-gray-400 mt-1">{item.school}</p>
-                  )}
+              <div className="mb-3">
+                <div className="flex flex-wrap justify-between items-center mb-2">
+                  <div className="text-2xl font-bold text-emerald-400">
+                    {item.institution}{item.school && `, ${item.school}`}
+                  </div>
+                  <div className="text-gray-300 font-medium whitespace-nowrap">
+                    {item.year}
+                  </div>
                 </div>
-                <span className="ml-auto text-gray-400 bg-gray-700/50 px-4 py-2 rounded-full text-sm">{item.year}</span>
+                <div className="text-lg font-medium text-white">
+                  {item.major} {item.degree}
+                </div>
               </div>
-              <p className="text-gray-300 leading-relaxed">{item.description}</p>
+              
+              {item.courses.length > 0 && (
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium uppercase tracking-wide text-gray-400 mb-2">相关课程</h4>
+                  <div className="flex flex-wrap gap-2">
+                    {item.courses.map((course, idx) => (
+                      <span key={idx} className="bg-gray-700/20 text-gray-300 text-sm px-3 py-1 rounded-full">
+                        {course}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
+              {item.awards.length > 0 && (
+                <div>
+                  <h4 className="text-sm font-medium uppercase tracking-wide text-gray-400 mb-2">获奖荣誉</h4>
+                  <ul className="space-y-1 text-gray-300">
+                    {item.awards.map((award, idx) => (
+                      <li key={idx} className="flex items-start gap-2">
+                        <span className="text-purple-400 mt-0.5">•</span>
+                        <span>{award}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </motion.div>
           ))}
         </div>
