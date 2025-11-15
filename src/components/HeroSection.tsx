@@ -3,8 +3,12 @@
 import { motion } from 'motion/react'
 import { Button } from './ui/button'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-react'
+import cv from '../../cv_data.json'
+import type { CVData } from '../types/cv'
 
 export function HeroSection() {
+  const data = cv as CVData
+  const resumeUrl = new URL('../../cv.pdf', import.meta.url).href
   const scrollToProjects = () => {
     const element = document.getElementById('projects-section')
     if (element) {
@@ -60,7 +64,7 @@ export function HeroSection() {
             transition={{ delay: 0.4 }}
             className="text-5xl md:text-7xl text-white mb-6"
           >
-            彼得
+            {data.personal_info.name}
           </motion.h1>
           
           <motion.div
@@ -71,7 +75,7 @@ export function HeroSection() {
           >
             我是一名{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-blue-400">
-              全栈开发者
+              {data.personal_info.title}
             </span>
             {' '}专注于{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-400">
@@ -101,12 +105,17 @@ export function HeroSection() {
             >
               查看我的作品
             </Button>
+            <Button asChild variant="outline" className="border-emerald-500/50 text-emerald-400 hover:bg-emerald-500/10 px-8 py-3">
+              <a href={resumeUrl} download>
+                下载简历
+              </a>
+            </Button>
             
             <div className="flex items-center space-x-4">
               {[
-                { icon: Github, href: '#' },
+                { icon: Github, href: data.personal_info.github },
                 { icon: Linkedin, href: '#' },
-                { icon: Mail, href: '#' }
+                { icon: Mail, href: `mailto:${data.personal_info.email}` }
               ].map(({ icon: Icon, href }, index) => (
                 <motion.a
                   key={index}

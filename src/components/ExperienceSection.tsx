@@ -1,46 +1,27 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import cv from '../../cv_data.json'
+import type { CVData } from '../types/cv'
 
 export function ExperienceSection() {
-  const experienceItems = [
-    {
-      id: 1,
-      position: '高级前端开发工程师',
-      company: 'XXX科技有限公司',
-      year: '2023年1月 - 至今',
-      description: '负责公司核心产品的前端架构设计和开发，优化用户体验，提升性能。带领团队完成多个重要项目，引入现代化前端技术栈。',
-      achievements: [
-        '重构核心项目，性能提升30%',
-        '设计并实施组件库，提高开发效率50%',
-        '主导前端技术栈升级，从Vue 2迁移到Vue 3 + TypeScript'
-      ]
-    },
-    {
-      id: 2,
-      position: '前端开发工程师',
-      company: 'YYY互联网公司',
-      year: '2021年7月 - 2022年12月',
-      description: '参与电商平台的前端开发，实现响应式布局和交互功能。与产品和后端团队紧密合作，按时交付高质量产品。',
-      achievements: [
-        '负责商品详情页开发，转化率提升15%',
-        '开发移动端适配方案，移动端流量增加40%',
-        '实现多种支付方式的集成和优化'
-      ]
-    },
-    {
-      id: 3,
-      position: 'Web开发实习生',
-      company: 'ZZZ软件公司',
-      year: '2021年2月 - 2021年6月',
-      description: '参与公司内部系统的开发和维护，学习企业级开发流程和最佳实践。',
-      achievements: [
-        '完成用户管理模块的开发',
-        '优化数据库查询，提高页面加载速度',
-        '学习和应用React和Redux进行项目开发'
-      ]
-    }
-  ]
+  const data = cv as CVData
+
+  const formatRange = (start: string, end: string | null) => {
+    const [sy, sm] = start.split('-')
+    if (!end) return `${sy}年${sm}月 - 至今`
+    const [ey, em] = end.split('-')
+    return `${sy}年${sm}月 - ${ey}年${em}月`
+  }
+
+  const experienceItems = data.experience.map((e, idx) => ({
+    id: idx + 1,
+    position: e.title,
+    company: e.company,
+    year: formatRange(e.start, e.end),
+    description: `${e.department} · ${e.title}`,
+    achievements: (e.achievements && e.achievements.length ? e.achievements : []).concat(e.responsibilities)
+  }))
 
   const containerVariants = {
     hidden: { opacity: 0 },

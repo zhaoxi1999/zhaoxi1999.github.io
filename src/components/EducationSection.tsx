@@ -1,24 +1,27 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import cv from '../../cv_data.json'
+import type { CVData } from '../types/cv'
 
 export function EducationSection() {
-  const educationItems = [
-    {
-      id: 1,
-      degree: '计算机科学学士',
-      institution: 'XXX大学',
-      year: '2017年9月 - 2021年6月',
-      description: '主修计算机科学与技术，辅修软件工程。参与多个校内项目开发，获得优秀毕业生称号。'
-    },
-    {
-      id: 2,
-      degree: '高中',
-      institution: 'XXX中学',
-      year: '2014年9月 - 2017年6月',
-      description: '理科学科，成绩优异，获得校级三好学生多次。'
-    }
-  ]
+  const data = cv as CVData
+
+  const formatRange = (start: string, end: string | null) => {
+    const [sy, sm] = start.split('-')
+    if (!end) return `${sy}年${sm}月 - 至今`
+    const [ey, em] = end.split('-')
+    return `${sy}年${sm}月 - ${ey}年${em}月`
+  }
+
+  const educationItems = data.education.map((e, idx) => ({
+    id: idx + 1,
+    degree: `${e.major} ${e.degree}`,
+    institution: e.institution,
+    school: e.school,
+    year: formatRange(e.start, e.end),
+    description: `相关课程：${e.courses.join('，')}` + (e.awards.length ? `。获奖：${e.awards.join('，')}` : '')
+  }))
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -70,12 +73,15 @@ export function EducationSection() {
               variants={itemVariants}
               className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-xl p-8 hover:shadow-lg hover:shadow-purple-900/20 transition-all duration-300"
             >
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white">{item.degree}</h3>
-                  <p className="text-xl text-emerald-400 mt-2">{item.institution}</p>
+              <div className="flex flex-row justify-between items-start gap-4 mb-4">
+                <div className="flex-1">
+                  <h3 className="text-3xl md:text-4xl font-bold text-emerald-400">{item.institution}</h3>
+                  <p className="text-xl text-white mt-2">{item.degree}</p>
+                  {item.school && (
+                    <p className="text-sm text-gray-400 mt-1">{item.school}</p>
+                  )}
                 </div>
-                <span className="text-gray-400 bg-gray-700/50 px-4 py-2 rounded-full text-sm">{item.year}</span>
+                <span className="ml-auto text-gray-400 bg-gray-700/50 px-4 py-2 rounded-full text-sm">{item.year}</span>
               </div>
               <p className="text-gray-300 leading-relaxed">{item.description}</p>
             </motion.div>

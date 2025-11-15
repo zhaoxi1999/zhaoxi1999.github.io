@@ -6,28 +6,31 @@ import { Button } from './ui/button'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Github, Linkedin, Mail, Twitter, MapPin, Phone } from 'lucide-react'
+import cv from '../../cv_data.json'
+import type { CVData } from '../types/cv'
 
 export function ContactSection() {
+  const data = cv as CVData
   const contactInfo = [
     {
       icon: Mail,
       label: '邮箱',
-      value: 'contact@mywebsite.com',
-      href: 'mailto:contact@mywebsite.com'
+      value: data.personal_info.email,
+      href: `mailto:${data.personal_info.email}`
     },
     {
-      icon: MapPin,
-      label: '位置',
-      value: '我的城市，中国',
-      href: '#'
+      icon: Phone,
+      label: '电话',
+      value: data.personal_info.phone,
+      href: `tel:${data.personal_info.phone}`
     }
   ]
 
   const socialLinks = [
-    { icon: Github, href: '#', label: 'GitHub' },
+    { icon: Github, href: data.personal_info.github, label: 'GitHub' },
     { icon: Linkedin, href: '#', label: 'LinkedIn' },
     { icon: Twitter, href: '#', label: 'Twitter' },
-    { icon: Mail, href: '#', label: '邮箱' }
+    { icon: Mail, href: `mailto:${data.personal_info.email}`, label: '邮箱' }
   ]
 
   return (
